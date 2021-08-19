@@ -54,19 +54,26 @@ An octave is a musical interval or the distance between one note and another, wh
 </p>
 
 # Model Architecture
-### MLP Model
-A fully connected neural network was deployed to predict the emotion from the features of the sound files.The model consists of 4 hidden layers with a dropout of 0.1 in the first three layers.The first and the second hidden layers consists of 512 neurons while the third layer contained 128 neurons and the fourth hidden layer contained 64 neurons.The model was defined using the keras in-built module Sequential which takes input in the form of layers. 'Relu' activation function was used to calculate the values of parameters from one layer to another layer.A dropout of 0.1 was also added in case of first three hidden layers to avoid overfitting by dropping a node with a 10% probability.In the first two layers 12 regularization was also deployed to overcome the case of overfitting and to effectively tune the parameters.The input layer is of the shape (180,1) and the ouput layer predicts the emotion using the 'softmax' function which gives the probability of each label and the label with the highest probability is selected and given as the answer.
-### CNN-Model
-A CNN was trained and tested on the dataset as well. The model architecture consists of 5 layers in total with first two being 1D convolutional layers and last three being dense fully connected layers.The first two layers contains 32 filters of size 3 each with the 'relu' activation function. Batch normalization was used to speed up the process and to generalize well on unseen data. Two dropout layers were also added in between the convolutional layers to optimize the performance of the model. These two layers were followed by a flatten layer to flatten the ouptut of the convolutional layer followed by 3 fully connected layers with 512, 512, and 256 neurons respectively with 'relu' as activation function. Regularizers and dropout layers were added in between these layers also to avoid the problem of overfitting. Finally, the last dense layer predicted the emotion using 'softmax' activation function.
+<table>
+  <tr>
+   <th><b>MLP Model</b></td>
+ <th><b>CNN Model</b></td>
+  </tr>
+  <tr>
+    <td>A fully connected neural network was deployed to predict the emotion from the features of the sound files.The model consists of 4 hidden layers with a dropout of 0.1 in the first three layers.The first and the second hidden layers consists of 512 neurons while the third layer contained 128 neurons and the fourth hidden layer contained 64 neurons.The model was defined using the keras in-built module Sequential which takes input in the form of layers. 'Relu' activation function was used to calculate the values of parameters from one layer to another layer.A dropout of 0.1 was also added in case of first three hidden layers to avoid overfitting by dropping a node with a 10% probability.In the first two layers 12 regularization was also deployed to overcome the case of overfitting and to effectively tune the parameters.The input layer is of the shape (180,1) and the ouput layer predicts the emotion using the 'softmax' function which gives the probability of each label and the label with the highest probability is selected and given as the answer.</td>
+    <td>A CNN was trained and tested on the dataset as well. The model architecture consists of 5 layers in total with first two being 1D convolutional layers and last three being dense fully connected layers.The first two layers contains 32 filters of size 3 each with the 'relu' activation function. Batch normalization was used to speed up the process and to generalize well on unseen data. Two dropout layers were also added in between the convolutional layers to optimize the performance of the model. These two layers were followed by a flatten layer to flatten the ouptut of the convolutional layer followed by 3 fully connected layers with 512, 512, and 256 neurons respectively with 'relu' as activation function. Regularizers and dropout layers were added in between these layers also to avoid the problem of overfitting. Finally, the last dense layer predicted the emotion using 'softmax' activation function.</td>
+  </tr>
+ </table>
 
-# Accuracy and Confusion Metrix
+
+# Accuracy and Confusion Matrix
 ### MLP Model
 Accuracy obtained on training data is  93.24  
 Accuracy obtained on test data is  65.83
 <table>
   <tr>
-    <td>Accuracy Plot</td>
-     <td>Confusion Matrix</td>
+    <th>Accuracy Plot</td>
+     <th>Confusion Matrix</td>
   </tr>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/58522706/130087022-03d08046-e00f-4958-a4f9-1ac5b12e9d9c.png" alt="Plot" width="500" height="300"></td>
@@ -80,8 +87,8 @@ Accuracy obtained on training data is  98.24
 Accuracy obtained on test data is  77.43
 <table>
   <tr>
-    <td>Accuracy Plot</td>
-     <td>Confusion Matrix</td>
+    <th>Accuracy Plot</td>
+     <th>Confusion Matrix</td>
   </tr>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/58522706/130088734-31d9bdc3-56bd-4525-9fb7-79c0e2fb2563.png" alt="Plot" width="500" height="300"></td>
